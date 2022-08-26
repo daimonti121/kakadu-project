@@ -51,12 +51,36 @@
             font-size: 20px
             line-height: 140%
             color: $textColor
+            position: relative
+        .active 
+            width: 100%
+            &::before
+                content: ""
+                display: block
+                width: calc( 100% + 20px )
+                right: calc( 0% + -10px )
+                top: calc( 100% + 11px )
+                background-color: $textColor
+                height: 3px
+                position: absolute
+                
     
         .gold-color 
             background: linear-gradient(90deg, #F8CA00 0%, #F8A400 100%) 
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
             font-weight: 700
+        .gold-active
+            width: 100%
+            &::before
+                content: ""
+                display: block
+                width: calc( 100% + 20px )
+                right: calc( 0% + -9px )
+                top: calc( 100% + 11px )
+                background-color: $goldColor
+                height: 3px
+                position: absolute
 
     &__left-block
         display: flex
