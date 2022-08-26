@@ -4,7 +4,10 @@ let popupClose = document.querySelectorAll('.close');
 popupsToggle.forEach(function(item){
     item.addEventListener('click',function(){
         let popupName = item.getAttribute('data-popup');
-        document.getElementById(popupName).style.display = "block";
+        document.getElementById(popupName).style.display = "flex";
+        document.getElementById(popupName).style.justifyContent = "center";
+        document.getElementById(popupName).style.alignItems = "center";
+
     })
 })
 
