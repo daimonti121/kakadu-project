@@ -9,25 +9,28 @@
     
 .burger-menu_button 
   position: absolute
-  top: 41px
-  right: 30px
+  top: 28px
+  right: 10px
   z-index: 30
   width: 30px
   height: 20px
-  border-radius: 50%
+  border-radius: 8px
+  background-color: $mainLight
+  width: 44px
+  height: 44px
 
 
-.burger-menu_button:hover .burger-menu_lines 
-  filter: brightness(0.7)
+// .burger-menu_button:hover .burger-menu_lines 
+//   filter: brightness(0.7)
 
 
 .burger-menu_lines,
 .burger-menu_lines::after,
 .burger-menu_lines::before 
   position: absolute
-  width: 28px
-  height: 3px
-  background-color: $goldColor
+  width: 20px
+  height: 2px
+  background-color: $textColor
   transition: 0.3s
 
 
@@ -40,11 +43,16 @@
 .burger-menu_lines::before 
   content: ""
   top: -8px
+  right: 0
+  width: 50%
 
 
 .burger-menu_lines::after 
   content: ""
+  width: 80%
   top: 8px
+  right: 0
+
 
 
 .burger-menu_active .burger-menu_lines 
@@ -54,38 +62,62 @@
 .burger-menu_active .burger-menu_lines::before 
   top: 0
   transform: rotate(45deg)
+  width: 100%
 
 
 .burger-menu_active .burger-menu_lines::after 
   top: 0
   transform: rotate(-45deg)
+  width: 100%
 
 
 .burger-menu_nav 
-  padding-top: 80px
   position: fixed
-  z-index: 20
+  z-index: 200
+  width: 140px
+  height: 270px
   display: flex
   flex-flow: column
-  height: 100%
-  background-color: #192E63
-  overflow-y: auto
-  right: -100%
-  top: 0px
+  background-color: #192E63  
   transition: 0.3s
+  right: 10px
+  top: 84px
+  border-radius: 15px
+  display: none
 
 
 .burger-menu_active .burger-menu_nav 
-  left: 0
-
+    display: flex
+    align-items: center
+    flex-direction: column
 
 .burger-menu_link 
-  padding: 30px
-  font-family: sans-serif
-  font-size: 32px
+  font-family: 'Inter'
+  font-style: normal
+  font-weight: 400
+  font-size: 15.0564px
+  line-height: 140%
   text-decoration: none
-  color: $goldColor
-
+  color: $textColor
+  margin: 20px auto 0px
+  &:nth-child(4)
+    font-weight: 700
+    background: linear-gradient(90deg, #F8CA00 0%, #F8A400 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+  &:nth-child(5)
+    margin-top: 30px
+    font-weight: 700
+  &:nth-child(6)
+    font-weight: 700
+    margin: 10px
+    background: $goldColor
+    border-radius: 12px
+    color: $mainLight
+    padding: 7px 0px
+    background-color: $goldColor
+    text-align: center
+    width: 94px
 
 .burger-menu_link:hover 
   filter: brightness(0.7)
@@ -103,7 +135,7 @@
 
 .burger-menu_active .burger-menu_overlay 
   display: block
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: transparent
 
 .burger-menu_flex_border
     display: flex
